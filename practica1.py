@@ -1,7 +1,7 @@
 #Esto es un comentario
 print ("Hola, Mundo")
 
-"""
+'''
 Comentario en  varias lineas
 USO DE VARIABLES 
 El nombre de una variable debe empezar por una letra o por el guión bajo.
@@ -9,7 +9,7 @@ El nombre de una variable no puede empezar por un número
 Un nombre de variable sólo puede contener caracteres alfanuméricos y guiones bajos (A-z, 0-9 y _ )
 Los nombres de las variables distinguen entre mayúsculas y minúsculas (edad, Age y AGE son tres variables diferentes)
 Un nombre de variable no puede ser ninguna de las palabras clave de Python.
-"""
+'''
 
 x = 5
 y = "John"
