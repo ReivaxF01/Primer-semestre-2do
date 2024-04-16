@@ -20,7 +20,8 @@ print(y)
 #Declarar y asignar variables
 a = str(5)    
 b = int(7)    
-c = float(9)  
+c = float(9)
+d = bool(1)
 
 #Comillas simples o dobles y distingue en minusculas y mayusculas
 n="pedro"
