@@ -1,16 +1,16 @@
-/*UNION DE LAS TABLAS CARGO Y DEPARTAMENTO POR MEDIO DE LA IGUALACIÓN DE CLAVES PRIMARIAS Y FORANEAS
+/*UNION DE LAS TABLAS CARGO Y DEPARTAMENTO POR MEDIO DE LA IGUALACIÃ“N DE CLAVES PRIMARIAS Y FORANEAS
 USANDO LA CLAUSULA WHERE */
 
 SELECT * FROM CARGO,EMPLEADO
 WHERE COD_CARGO=ID_CARGO;
 
-/* UNIÓN DE LAS TABLAS DEPARTAMENTO Y EMPLEADO POR MEDIO DE LA IGUALACIÓN DE CLAVE PRIMARIA Y FORANEA
+/* UNIÃ“N DE LAS TABLAS DEPARTAMENTO Y EMPLEADO POR MEDIO DE LA IGUALACIÃ“N DE CLAVE PRIMARIA Y FORANEA
 USANDO LA CLAUSUSLA WHERE*/
 
 SELECT * FROM DEPARTAMENTO,EMPLEADO
 WHERE COD_DEPARTAMENTO=ID_DEPARTAMENTO;
 
-/* UNIÓN DE LAS TABLAS CARGO, EMPLEADO Y DEPARTAMENTO POR MEDIO DE LA IGUALACIÓN DE LA CLAVE PRIMARIA Y FORANEA
+/* UNIÃ“N DE LAS TABLAS CARGO, EMPLEADO Y DEPARTAMENTO POR MEDIO DE LA IGUALACIÃ“N DE LA CLAVE PRIMARIA Y FORANEA
 USANDO LA CLAUSULA WHERE*/
 
 SELECT * FROM CARGO,EMPLEADO,DEPARTAMENTO
@@ -20,7 +20,7 @@ WHERE COD_CARGO=ID_CARGO AND ID_DEPARTAMENTO=COD_DEPARTAMENTO;
 A) JOIN O INNER JOIN (UNIONES INTERNAS)
 B) LEFT JOIN, RIGHT JOIN Y FULL OUTER JOIN (UNIONES EXTERNAS)
 
-LAS UNIONES INTERNAS SE CARACTERIZAN POR UNIR TABLAS SIN LA GENERACIÓN DE VALORES NULL, A MENOS QUE ALGUNA DE LAS
+LAS UNIONES INTERNAS SE CARACTERIZAN POR UNIR TABLAS SIN LA GENERACIÃ“N DE VALORES NULL, A MENOS QUE ALGUNA DE LAS
 TABLAS DISPONGA DE VALORES NULL
 
 LAS UINIONES EXTERNAS, EN CAMBIO, AL SER UTILIZADAS PARA UNIR TABLAS PUEDEN GENERAR VALORES NULL
@@ -106,26 +106,26 @@ FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO;
 /*2._ Devuelve una lista con el nombre del producto, precio y nombre de fabricante de todos
 los productos de la base de datos. Ordene el resultado por el nombre del fabricante, por
-orden alfabético*/
+orden alfabÃ©tico*/
 SELECT P.NOMBRE,P.PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE=F.CODIGO
 ORDER BY F.NOMBRE;
 /*3._ Devuelve una lista con el nombre del producto, precio y nombre de fabricante de todos
 los productos de la base de datos. Ordene el resultado por el nombre del fabricante, por
-orden alfabético.*/
+orden alfabÃ©tico.*/
 SELECT P.CODIGO,P.NOMBRE,P.PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE=F.CODIGO
 ORDER BY F.NOMBRE;
-/*4._ Devuelve una lista con el código del producto, nombre del producto, código del
+/*4._ Devuelve una lista con el cÃ³digo del producto, nombre del producto, cÃ³digo del
 fabricante y nombre del fabricante, de todos los productos de la base de datos.*/
 SELECT P.NOMBRE,P.PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE P.PRECIO=(SELECT MIN(PRECIO) FROM PRODUCTO);
 /*5._ Devuelve el nombre del producto, su precio y el nombre de su fabricante, del producto
-más caro*/
+mÃ¡s caro*/
 SELECT P.NOMBRE,P.PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE=F.CODIGO
@@ -136,7 +136,7 @@ FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE F.NOMBRE='Lenovo';
 /*7._Devuelve una lista de todos los productos del fabricante Crucial que tengan un precio
-mayor que 200€.*/
+mayor que 200â‚¬.*/
 SELECT P.*,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
@@ -160,13 +160,13 @@ FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE F.NOMBRE LIKE '%e';
 /*11._ Devuelve un listado con el nombre y el precio de todos los productos cuyo nombre de
-fabricante contenga el carácter w en su nombre.*/
+fabricante contenga el carÃ¡cter w en su nombre.*/
 SELECT P.*,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE F.NOMBRE LIKE '%w%';
 /*12._ Devuelve un listado con el nombre de producto, precio y nombre de fabricante, de todos
-los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer
+los productos que tengan un precio mayor o igual a 180â‚¬. Ordene el resultado en primer
 lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden
 ascendente)*/
 SELECT P.NOMBRE,P.PRECIO,F.NOMBRE
@@ -174,14 +174,14 @@ FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE P.PRECIO >= 180 
 ORDER BY P.PRECIO DESC,P.NOMBRE;
-/*13._ Devuelve un listado con el código y el nombre de fabricante, solamente de aquellos
+/*13._ Devuelve un listado con el cÃ³digo y el nombre de fabricante, solamente de aquellos
 fabricantes que tienen productos asociados en la base de datos.*/
 SELECT DISTINCT(F.CODIGO),F.NOMBRE 
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO;
 //CONSULTAS MULTITABLA (LEFT Y RIGHT JOIN//
 /*1._ Devuelve un listado de todos los fabricantes que existen en la base de datos, junto con
-los productos que tiene cada uno de ellos. El listado deberá mostrar también aquellos
+los productos que tiene cada uno de ellos. El listado deberÃ¡ mostrar tambiÃ©n aquellos
 fabricantes que no tienen productos asociados*/
 SELECT *
 FROM FABRICANTE F LEFT JOIN PRODUCTO P
@@ -190,33 +190,33 @@ ON F.CODIGO=P.COD_FABRICANTE;
 SELECT *
 FROM FABRICANTE F RIGHT JOIN PRODUCTO P
 ON F.CODIGO=P.COD_FABRICANTE;
-/*2._ Devuelve un listado donde sólo aparezcan aquellos fabricantes que no tienen ningún
+/*2._ Devuelve un listado donde sÃ³lo aparezcan aquellos fabricantes que no tienen ningÃºn
 producto asociado*/
 SELECT F.*
 FROM FABRICANTE F LEFT JOIN PRODUCTO P
 ON F.CODIGO=P.COD_FABRICANTE
 WHERE P.CODIGO IS NULL;
 //Consultas resumen (Funciones de agregado count, sum, max, min, avg)//
-/*1._ Calcula el número total de productos que hay en la tabla productos*/
+/*1._ Calcula el nÃºmero total de productos que hay en la tabla productos*/
 SELECT COUNT(*) AS TOTAL_PRODUCTOS FROM PRODUCTO;
-/*2._ Calcula el número total de fabricantes que hay en la tabla fabricante*/
+/*2._ Calcula el nÃºmero total de fabricantes que hay en la tabla fabricante*/
 SELECT COUNT(*) AS TOTAL_FABRICANTES FROM FABRICANTE;
-/*3._ Calcula el número de valores distintos de código de fabricante aparecen en la tabla
+/*3._ Calcula el nÃºmero de valores distintos de cÃ³digo de fabricante aparecen en la tabla
 productos*/
 SELECT COUNT(DISTINCT(COD_FABRICANTE)) FROM PRODUCTO;
 /*4._ Calcula la media del precio de todos los productoS*/
 SELECT AVG(PRECIO) AS PRECIO_MEDIO FROM PRODUCTO;
 
 SELECT TRUNC(AVG(PRECIO),3)AS PRECIO_MEDIO FROM PRODUCTO; //TRUNC PERMITE DEFINIR LA CANTIDAD DE DECIMALES A MOSTRAR, EN ESTE CASO, 3//
-/*5._ Calcula el precio más barato de todos los productos.*/
+/*5._ Calcula el precio mÃ¡s barato de todos los productos.*/
 SELECT MIN(PRECIO) AS PRECIO_MAS_BAJO FROM PRODUCTO;
-//6._ Calcula el precio más caro de todos los productos//
+//6._ Calcula el precio mÃ¡s caro de todos los productos//
 SELECT MAX(PRECIO) AS PRECIO_MAS_ALTO FROM PRODUCTO;
-//7._ Lista el nombre y el precio del producto más barato.//
+//7._ Lista el nombre y el precio del producto mÃ¡s barato.//
 SELECT NOMBRE,PRECIO
 FROM PRODUCTO
 WHERE PRECIO=(SELECT MIN(PRECIO) FROM PRODUCTO);
-//8._ Lista el nombre y el precio del producto más caro.//
+//8._ Lista el nombre y el precio del producto mÃ¡s caro.//
 SELECT NOMBRE,PRECIO
 FROM PRODUCTO
 WHERE PRECIO=(SELECT MAX(PRECIO) FROM PRODUCTO);
@@ -231,10 +231,10 @@ SELECT MAX(P.PRECIO),MIN(P.PRECIO),AVG(P.PRECIO),COUNT(*)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE F.NOMBRE='Crucial';
-/*16._ . Muestra el número total de productos que tiene cada uno de los fabricantes. El listado
-también debe incluir los fabricantes que no tienen ningún producto. El resultado
-mostrará dos columnas, una con el nombre del fabricante y otra con el número de
-productos que tiene. Ordene el resultado descendentemente por el número de
+/*16._ . Muestra el nÃºmero total de productos que tiene cada uno de los fabricantes. El listado
+tambiÃ©n debe incluir los fabricantes que no tienen ningÃºn producto. El resultado
+mostrarÃ¡ dos columnas, una con el nombre del fabricante y otra con el nÃºmero de
+productos que tiene. Ordene el resultado descendentemente por el nÃºmero de
 productos.
 */
 SELECT F.NOMBRE,COUNT(*)
@@ -242,33 +242,33 @@ FROM FABRICANTE F LEFT JOIN PRODUCTO P
 ON P.COD_FABRICANTE = F.CODIGO
 GROUP BY F.NOMBRE;
 //17//
-/*18._Muestra el precio máximo, precio mínimo, precio medio y el número total de productos
-de los fabricantes que tienen un precio medio superior a 200€. No es necesario mostrar
-el nombre del fabricante, con el código del fabricante es suficiente.*/
+/*18._Muestra el precio mÃ¡ximo, precio mÃ­nimo, precio medio y el nÃºmero total de productos
+de los fabricantes que tienen un precio medio superior a 200â‚¬. No es necesario mostrar
+el nombre del fabricante, con el cÃ³digo del fabricante es suficiente.*/
 SELECT F.CODIGO,MAX(P.PRECIO),MIN(P.PRECIO),AVG(P.PRECIO),COUNT(*)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 GROUP BY F.CODIGO
 HAVING AVG(P.PRECIO)>200;
-/*19._Muestra el nombre de cada fabricante, junto con el precio máximo, precio mínimo,
-precio medio y el número total de productos de los fabricantes que tienen un precio
-medio superior a 200€. Es necesario mostrar el nombre del fabricante*/
+/*19._Muestra el nombre de cada fabricante, junto con el precio mÃ¡ximo, precio mÃ­nimo,
+precio medio y el nÃºmero total de productos de los fabricantes que tienen un precio
+medio superior a 200â‚¬. Es necesario mostrar el nombre del fabricante*/
 SELECT F.NOMBRE,MAX(P.PRECIO),MIN(P.PRECIO),AVG(P.PRECIO),COUNT(*)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 GROUP BY F.NOMBRE
 HAVING AVG(P.PRECIO)>200;
-//20._Calcula el número de productos que tienen un precio mayor o igual a 180€//
+//20._Calcula el nÃºmero de productos que tienen un precio mayor o igual a 180â‚¬//
 SELECT COUNT(*) FROM PRODUCTO
 WHERE PRECIO >= 180;
-/*21._. Calcula el número de productos que tiene cada fabricante con un precio mayor o igual
-a 180€.*/
+/*21._. Calcula el nÃºmero de productos que tiene cada fabricante con un precio mayor o igual
+a 180â‚¬.*/
 SELECT F.NOMBRE,COUNT(*)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE P.PRECIO>=180
 GROUP BY F.NOMBRE;
-/*22._Lista el precio medio los productos de cada fabricante, mostrando solamente el código
+/*22._Lista el precio medio los productos de cada fabricante, mostrando solamente el cÃ³digo
 del fabricante.*/
 SELECT F.CODIGO,AVG(P.PRECIO)
 FROM PRODUCTO P JOIN FABRICANTE F
@@ -281,56 +281,56 @@ FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 GROUP BY F.NOMBRE;
 /*24._Lista los nombres de los fabricantes cuyos productos tienen un precio medio mayor o
-igual a 150€.*/
+igual a 150â‚¬.*/
 SELECT F.NOMBRE,AVG(P.PRECIO)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 GROUP BY F.NOMBRE
 HAVING AVG(P.PRECIO)>=150;
-/* 25._ Devuelve un listado con los nombres de los fabricantes que tienen 2 o más productos*/
+/* 25._ Devuelve un listado con los nombres de los fabricantes que tienen 2 o mÃ¡s productos*/
 SELECT F.NOMBRE,COUNT(*)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 GROUP BY F.NOMBRE
 HAVING COUNT(*)>1;
-/*26._ Devuelve un listado con los nombres de los fabricantes y el número de productos que
-tiene cada uno con un precio superior o igual a 220 €. No es necesario mostrar el nombre
-de los fabricantes que no tienen productos que cumplan la condición.*/
+/*26._ Devuelve un listado con los nombres de los fabricantes y el nÃºmero de productos que
+tiene cada uno con un precio superior o igual a 220 â‚¬. No es necesario mostrar el nombre
+de los fabricantes que no tienen productos que cumplan la condiciÃ³n.*/
 SELECT F.NOMBRE,COUNT(*)
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO
 WHERE P.PRECIO >= 220
 GROUP BY F.NOMBRE;
-/*27._ Devuelve un listado con los nombres de los fabricantes y el número de productos que
-tiene cada uno con un precio superior o igual a 220 €. El listado debe mostrar el nombre
-de todos los fabricantes, es decir, si hay algún fabricante que no tiene productos con un
-precio superior o igual a 220€ deberá aparecer en el listado con un valor igual a 0 en el
-número de productos*/
+/*27._ Devuelve un listado con los nombres de los fabricantes y el nÃºmero de productos que
+tiene cada uno con un precio superior o igual a 220 â‚¬. El listado debe mostrar el nombre
+de todos los fabricantes, es decir, si hay algÃºn fabricante que no tiene productos con un
+precio superior o igual a 220â‚¬ deberÃ¡ aparecer en el listado con un valor igual a 0 en el
+nÃºmero de productos*/
 SELECT F.NOMBRE ,COUNT(P.CODIGO)
 FROM FABRICANTE F LEFT JOIN PRODUCTO P
 ON F.CODIGO=P.COD_FABRICANTE AND P.PRECIO >=220
 GROUP BY F.NOMBRE;
-/*29._. Devuelve un listado con el nombre del producto más caro que tiene cada fabricante. El
+/*29._. Devuelve un listado con el nombre del producto mÃ¡s caro que tiene cada fabricante. El
 resultado debe tener tres columnas: nombre del producto, precio y nombre del
-fabricante. El resultado tiene que estar ordenado alfabéticamente de menor a mayor
+fabricante. El resultado tiene que estar ordenado alfabÃ©ticamente de menor a mayor
 por el nombre del fabricante.*/
 SELECT F.NOMBRE AS NOM_FABRICANTE,MAX(P.PRECIO) AS PRECIO_MAXIMO 
 FROM PRODUCTO P JOIN FABRICANTE F
 ON P.COD_FABRICANTE=F.CODIGO 
 GROUP BY F.NOMBRE;
 
-/*Subconsultas (En la cláusula WHERE)
+/*Subconsultas (En la clÃ¡usula WHERE)
 1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER JOIN).*/
 SELECT * FROM PRODUCTO
 WHERE COD_FABRICANTE IN (SELECT CODIGO FROM FABRICANTE
                          WHERE NOMBRE ='Lenovo');
 /*2. Devuelve todos los datos de los productos que tienen el mismo precio que el producto
-más caro del fabricante Lenovo. (Sin utilizar INNER JOIN).*/
+mÃ¡s caro del fabricante Lenovo. (Sin utilizar INNER JOIN).*/
 SELECT * FROM PRODUCTO
 WHERE PRECIO =(SELECT MAX(PRECIO) FROM PRODUCTO
                 WHERE COD_FABRICANTE = (SELECT CODIGO FROM FABRICANTE 
                                         WHERE NOMBRE='Lenovo'));
-/*3. Lista el nombre del producto más caro del fabricante Lenovo.*/
+/*3. Lista el nombre del producto mÃ¡s caro del fabricante Lenovo.*/
 SELECT P.NOMBRE,PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE = F.CODIGO
@@ -338,7 +338,7 @@ WHERE F.NOMBRE = 'Lenovo' AND
 PRECIO = (SELECT MAX(PRECIO) FROM PRODUCTO
             WHERE COD_FABRICANTE = (SELECT CODIGO FROM FABRICANTE 
                                     WHERE NOMBRE = 'Lenovo'));            
-/*4. Lista el nombre del producto más barato del fabricante Hewlett-Packard.*/
+/*4. Lista el nombre del producto mÃ¡s barato del fabricante Hewlett-Packard.*/
 SELECT P.NOMBRE,PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE = F.CODIGO
@@ -347,7 +347,7 @@ PRECIO = (SELECT MIN(PRECIO) FROM PRODUCTO
             WHERE COD_FABRICANTE = (SELECT CODIGO FROM FABRICANTE 
                                     WHERE NOMBRE = 'Hewlett-Packard'));
 /*5. Devuelve todos los productos de la base de datos que tienen un precio mayor o igual al
-producto más caro del fabricante Lenovo.*/
+producto mÃ¡s caro del fabricante Lenovo.*/
 SELECT P.NOMBRE,PRECIO,F.NOMBRE
 FROM PRODUCTO P JOIN FABRICANTE F 
 ON P.COD_FABRICANTE = F.CODIGO
@@ -366,7 +366,7 @@ PRECIO > (SELECT AVG(PRECIO) FROM PRODUCTO
                                     WHERE NOMBRE = 'Asus'));
 /* LOS SINONIMOS SON OBJETOS DEL ESQUEMA DE BASE DE DATOS QUE SE UTILIZAN PARA REFERENCIAR OTROS OBJETOS 
 DONDE EL NOMBRE ASIGNADO ES COMPLEJO, LARGO O DIFICIL DE UTILIZAR.EXISTEN 2 TIPOS DE SINONIMO, LOS SINONIMOS
-PRIVADOS Y PUBLICOS. LOS PRIVADOS SON ACCESIBLES SOLO POR EL USUARIO QUE LOS CREÓ , MIENTRAS QUE LOS PUBLICOS
+PRIVADOS Y PUBLICOS. LOS PRIVADOS SON ACCESIBLES SOLO POR EL USUARIO QUE LOS CREÃ“ , MIENTRAS QUE LOS PUBLICOS
 SON UTILIZABLES POR TODOS LOS USUARIOS QUE PERTENECEN AL ESQUEMA DE LA BASE DE DATOS*/
 
 /* EL FORMATO PARA CREAR UN SINONIMO ES :
@@ -399,7 +399,7 @@ DROP PUBLIC SYNONYM PROD;
 EXISTEN 2 TIPOS DE INDICES, LOS UNICOS Y LOS NO UNICOS. LOS INDICES UNICOS NO PERMITEN LA REPETICION DE DATOS
 MIENTRAS QUE LOS NO UNICOS SOPORTAN LA DUPLICACION DE DATOS. LA CREACION DE UN INDICE DEPENDE DE VARIOS FACTORES
 SIENDO ALGUNOS: LA(S) COLUMNA(S) MS CONSULTADAS POR LOS USUARIOS , LA CANTIDAD DE FILAS DISPONIBLES EN LA TABLA 
-LA PRESENCIA DE VALORES NULL Y EL TIPO DE DATO ALBERGADO ENTRE OTROS. SIN EMBARGO LA CRECAIÓN INDISCRIMINADA 
+LA PRESENCIA DE VALORES NULL Y EL TIPO DE DATO ALBERGADO ENTRE OTROS. SIN EMBARGO LA CRECAIÃ“N INDISCRIMINADA 
 DE INDICES EN UNA BASE DE DATOS PRODUCE UN RETRASO EN LOS TIEMPOS DE RESPUESTA
 
 EL FORMATO PARA CREAR INDICES EN ORACLE ES EL SIGUIENTE:
@@ -426,7 +426,7 @@ DROP INDEX I_NOM_FAB;
 DROP INDEX I_NOM_PROD;
 DROP INDEX I_MI_INDICE;
 
-/* LOS CONTENIDOS PARA LA PRIMERA EVALUACIÓSN SON:
+/* LOS CONTENIDOS PARA LA PRIMERA EVALUACIÃ“SN SON:
     -VISTAS
     -SECUENCIAS
     -CONSULTAS MULTITABLA
@@ -484,7 +484,7 @@ SELECT * FROM FABRICANTE
 ORDER BY LENGTH(NOMBRE) DESC;
 
 /*SUBSTR(CADENA, POSICION_INICIAL,CANTIDAD) PERMITE EXTRAER CARACTERES A PARTIR DE UNA CADENA DE TEXTO
-INDICANDO UNA POSICIÓN INICIAL Y LA CANTIDAD DE CARACTERES A EXTRAER*/
+INDICANDO UNA POSICIÃ“N INICIAL Y LA CANTIDAD DE CARACTERES A EXTRAER*/
 
 SELECT NOMBRE,SUBSTR(NOMBRE,1,3) FROM FABRICANTE; //ACA EXTRAE LAS PRIMERAS TRES LETRAS DEL NOMBRE DEL FABRICANTE//
 
@@ -494,7 +494,7 @@ SELECT NOMBRE,SUBSTR(NOMBRE,LENGTH(NOMBRE),1)FROM FABRICANTE;
 
 SELECT NOMBRE,SUBSTR(NOMBRE,-3) FROM FABRICANTE;
 
-/* INSTR(CADENA,CAD_BUSCAR,POS_INICIAL) RETORNA UN NUMERO SEÑALANDO LA POSICION DONDE SE ENCUENTRA EL PARAMETRO 'CAD_BUSCAR' DENTRO
+/* INSTR(CADENA,CAD_BUSCAR,POS_INICIAL) RETORNA UN NUMERO SEÃ‘ALANDO LA POSICION DONDE SE ENCUENTRA EL PARAMETRO 'CAD_BUSCAR' DENTRO
 DEL PRIMER PARAMETRO, EN CASO QUE NO HAYA COINCIDENCIA RETORNA EL VALOR 0*/
 
 SELECT NOMBRE,INSTR(NOMBRE,'u',1) FROM FABRICANTE;
@@ -535,3 +535,119 @@ SELECT NOMBRE,RPAD(NOMBRE,LENGTH(NOMBRE)+5,'!') FROM FABRICANTE;
 //REVERSE(CADENA) INVIERTE EL ORDEN DE LA PALABRA//
 
 SELECT NOMBRE,REVERSE(NOMBRE) FROM FABRICANTE;
+
+//Funciones para el manejo de expresiones nÃºmericos//
+
+/* TRUNC(NUMERO_DECIMAL,POS_DECIMAL), TRUNCA UN NUMERO DECIMAL A PARTIR DE LA POSICION SEÃ‘ALADA EN EL SEGUNDO PARAMETRO, EN EL CASO DE QUE 
+EL SEGUNDO PARAMETRO NO SE INDIQUE NADA, SE TRUNCAN TODOS LOS DECIMALES */
+
+SELECT TRUNC(3.14159265358979323846,2) FROM DUAL;
+
+/* ROUND(NUMERO_DECIMAL,POS_DECIMAL) REDONDEA LA POSICION DECIMAL INDICADA EN EL SEGUNDO PARAMETRO */
+
+SELECT ROUND(3.14159265358979323846,4) FROM DUAL;
+
+/* MOD(DIVIDENDO,DIVISOR) CALCULA EL RESTO DE LA DIVISION*/
+
+SELECT MOD(9,5) FROM DUAL; //<- EN ESTE CASO EL RESTO SERIA 4//
+
+/* POWER(BASE,EXPONENTE) CALCULA LA POTENCIA DE UN NUMERO EXPRESADO COMO EL PARAMETRO BASE ELEVADO AL EXPONENTE*/
+
+SELECT POWER(2,3) FROM DUAL;
+
+SELECT POWER(10,2) FROM DUAL;
+
+/* SQRT(NUMERO)CALCULA LA RAIZ CUADRADA DEL PARAMETRO NUMERO*/
+
+SELECT  SQRT(16) FROM DUAL;
+
+/* ABS(NUMERO) RETORNA EL VALOR ABSOLUTO DEL PARAMETRO NUMERO*/
+
+SELECT ABS(-345) FROM DUAL;
+
+/* SIGN(NUMERO) RETORNA EL SIGNO DEL PARAMETRO NUMERO EXPRESADO COMO 1 (SI ES POSITIVO) O -1 (SI ES NEGATIVO)*/
+
+SELECT SIGN(-567) FROM DUAL;
+
+/* CEIL(NUMERO_DECIMAL) APROXIMA HACIA ARRIBA LA PARTE ENTERA DEL NUMERO*/
+
+SELECT CEIL(3.14159265358979323846) FROM DUAL;
+
+/* FLOOR(NUMERO_DECIMAL) APROXIMA HACIA ABAJO LA PARTE ENTERA DEL DECIMAL*/
+
+SELECT FLOOR(3.14159265358979323846) FROM DUAL;
+
+/* EXISTEN FUNCIONES ESTADISTICAS, TRIGONOMETRICAS, LOGARITMOS, ETC.*/
+
+CREATE TABLE PERSONA(
+CODIGO NUMBER,
+NOMBRE VARCHAR2(50),
+APELLIDO VARCHAR2(30),
+FECHA_NAC DATE,
+CONSTRAINT PERSON_PK PRIMARY KEY(CODIGO));
+
+INSERT INTO PERSONA VALUES(1,'RENE','RIOS','19-05-2000');
+INSERT INTO PERSONA VALUES(2,'RAUL','LAGOS','10-11-1999');
+INSERT INTO PERSONA VALUES(3,'SERGIO','DIAZ','06-04-1998');
+INSERT INTO PERSONA VALUES(4,'PEDRO','SANTOS','19-05-2001');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+INSERT INTO PERSONA VALUES(5,'MARLENE','ARRIAGADA','19-05-2000');
+
+/*FUNCIONES PARA EL MANEJO DE FECHAS EN ORACLE*/
+
+/* SYSDATE RETORNA LA FECHA ACTUAL EXTRAIDA DE LA ZONA GEOGRAFICA*/
+
+SELECT SYSDATE FROM DUAL;
+
+/*CURRENT_DATE RETORNA LA FECHA ACTUAL EXTRAIDA DE LA ZONA GEOGRAFICA*/
+
+SELECT CURRENT_DATE FROM DUAL;
+
+/*ADD_MONTHS(FECHA_INICIAL,CANTIDAD_MESES) RETORNA LA FECHA RESULTADO DE LA DE MESES AL PARAMETRO FECHA INICIAL*/
+
+SELECT FECHA_NAC,ADD_MONTHS(FECHA_NAC,2) FROM PERSONA;
+
+/* SUMAR 3 AÃ‘OS A LA FECHA DE NACIMIENTO DE LAS PERSONAS*/
+
+SELECT FECHA_NAC,ADD_MONTHS(FECHA_NAC,36) FROM PERSONA;
+
+/* RESTAR UN MES A LA FECHA DE NACIMIENTO*/
+
+SELECT FECHA_NAC,ADD_MONTHS(FECHA_NAC,-1) FROM PERSONA;
+
+/* MONTHS_BETWEEN(FECHA_1,FECHA_2)CALCULA LA DIFERENCIA DE MESES ENTRE LA FECHA 1 Y FECHA 2*/
+
+SELECT FECHA_NAC,TRUNC(MONTHS_BETWEEN(SYSDATE,FECHA_NAC)/12) AS EDAD FROM PERSONA;
+
+/* NOTA: LA FECHA MAYOR DEBE SER EL PARAMETRO 1 (ES DECIR, LA FECHA MAS ACTUAL) Y EL SEGUNDO DEBE SER LA FECHA MÃS ANTIGUA*/
+
+SELECT MONTHS_BETWEEN('25-12-2024',SYSDATE) FROM DUAL;
+
+/* LAST_DAY(FECHA) RETORNA LA FECHA DEL ULTIMO DIA DEL MES CRRESPONDIENTE A LA FECHA INDICADA COMO PARAMETRO*/
+
+SELECT LAST_DAY(SYSDATE) FROM DUAL;
+
+/* NEXT_DAY(FECHA_INICIAL,NOMBRE_DIA) RETORNA LA FECHA DEL NOMBRE DEL DÃA A PARTIR DE LA FECHA INICIAL DADA COMO PARAMETRO*/
+
+SELECT NEXT_DAY(SYSDATE,'JUEVES') FROM DUAL;
+SELECT NEXT_DAY(SYSDATE,'VIERNES') FROM DUAL;
+SELECT NEXT_DAY(SYSDATE,'SÃBADO') FROM DUAL;
+SELECT NEXT_DAY(SYSDATE,'DOMINGO') FROM DUAL;
+SELECT NEXT_DAY(SYSDATE,'LUNES') FROM DUAL;
+SELECT NEXT_DAY(SYSDATE,'MARTES') FROM DUAL;
+SELECT NEXT_DAY(SYSDATE,'MIÃ‰RCOLES') FROM DUAL;
+
+/* EXTRACT(DAY FROM FECHA) EXTRAE EL DÃA (NUMERICO) DE LA FECHA PROPORCIONADA*/
+
+SELECT EXTRACT(DAY FROM FECHA_NAC) AS DIA FROM PERSONA;
+
+/* EXTRACT(MONTH FROM FECHA) EXTRAE EL MES (NUMERICO) DE LA FECHA PROPORCIONADA*/
+
+SELECT EXTRACT(MONTH FROM FECHA_NAC) AS MES FROM PERSONA;
+
+/* EXTRACT(MONTH FROM FECHA) EXTRAE EL MES (NUMERICO) DE LA FECHA PROPORCIONADA*/
+
+SELECT EXTRACT(YEAR FROM FECHA_NAC) AS AÃ‘O FROM PERSONA;
+
+/*TO_CHAR(FECHA,'YYYY'),TO_CHAR(FECHA,'MM'),TO_CHAR(FECHA,'DD') EXRAE LAS FECHAS COMO CARACTERES*/
+
+SELECT FECHA_NAC,TO_CHAR(FECHA_NAC,'YYYY'),TO_CHAR(FECHA_NAC,'MM'),TO_CHAR(FECHA_NAC,'DD') FROM PERSONA;
