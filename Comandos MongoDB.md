@@ -32,10 +32,14 @@ se usa para eliminar todos los documentos dentro de una coleccion. _**NOTA**: la
 ## **db.NombreColección.find().count()** o **db.NombreColleción.find().size()**:
 se usa para contar los documentos dentro de una colección
 ## **db.NombreColección.find({campo:{$gt:{valor}})**:
-se usa para buscar "algo mayor que" respeto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo mayor que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
 ## **db.NombreColección.find({campo:{$lt:{valor}})**:
-se usa para buscar "algo menor que" respeto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo menor que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
 ## **db.NombreColección.find({campo:{$eq:{valor}})**:
-se usa para buscar "algo igual que" respeto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
 ## **db.NombreColección.find({campo:{$ne:{valor}})**:
-se usa para buscar "algo no igual que" respeto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo no igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+## **db.NombreColección.find({campo:{$gte:{valor}})**:
+se usa para buscar "algo mayor o igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+## **db.NombreColección.find({campo:{$lte:{valor}})**:
+se usa para buscar "algo menor o igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
