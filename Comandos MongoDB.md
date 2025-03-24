@@ -52,9 +52,9 @@ gt (Greater Than, mayor que), lt (Less Than, Menor que), eq (equal, igual que), 
 ## **db.NombreColección.find({campo:/texto, sin comillas/})**:
 se usa para buscar cadenas de texto dentro de la colección
 ## **db.NombreColección.find({campo:/^Caracter con el que empieza el valor/})**:
-se usa para indicar que busque un valor por la letra inicial en el campo que se le indica, **ejemplo**: si tenemos el campo 'texto' con valor 'Hola',también con valor 'Adiós' y con valor 'Hello' (texto:'Hola', texto:'Hello',texto:'Adiós'), y queremos que solo arroje los valores que inician con H, se usaría este comando de esta forma: **db.NombreColección.find({campo:/^H/})**
+se usa para indicar que busque un valor por la letra inicial en el campo que se le indica, **ejemplo**: si tenemos el campo 'texto' con valor 'Hola',también con valor 'Adiós' y con valor 'Hello' (texto:'Hola', texto:'Hello',texto:'Adiós'), y queremos que solo arroje los documemtos cuyo valor indicado inicie con H, se usaría este comando de esta forma: **db.NombreColección.find({campo:/^H/})**
 ## db.NombreColección.find({campo:/caracter con el que termina el valor$/}):
-se usa para indicar que busque un valor por la letra final en el campo que se le indica, **ejemplo**: siguiendo con el ejemplo anterior, supongamos que añadimos 'términos' al campo 'texto'(texto:'Adiós',texto:'términos'), para que nos muestre ambos valores usariamos el comando de la siguiente manera: **db.NombreColección.find({campo:/s$/})**
+se usa para indicar que busque un valor por la letra final en el campo que se le indica, **ejemplo**: siguiendo con el ejemplo anterior, supongamos que añadimos 'términos' al campo 'texto'(texto:'Adiós',texto:'términos'), para que nos muestre ambos documentos usariamos el comando de la siguiente manera: **db.NombreColección.find({campo:/s$/})**
 
 # Operadores Lógicos 
 ## db.NombreColección.find({campo:{$in[valor1,valor2,valor3,etc.]}}):
