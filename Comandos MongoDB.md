@@ -1,5 +1,5 @@
 # Comandos MongoDB:
-## **use <<nombre de la base de datos>>**:
+## **use 'nombre de la base de datos' (sin comillas)**:
 sirve para cambiar entre bases de datos. _**NOTA**: la base de datos no se creará hasta que tenga al menos una colección_
 ## **show dbs o show databases**: 
 se usa para mostrar las bases de datos existentes
