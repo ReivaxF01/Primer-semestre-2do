@@ -31,19 +31,20 @@ se usa para eliminar varios documentos dentro de una coleccion
 se usa para eliminar todos los documentos dentro de una coleccion. _**NOTA**: la colección sigue existiendo, pero sin archivos dentro de ella._
 ## **db.NombreColección.find().count()** o **db.NombreColleción.find().size()**:
 se usa para contar los documentos dentro de una colección
+
 # Operaciones Numéricas
 ## **db.NombreColección.find({campo:{$gt:{valor}})**:
-se usa para buscar "algo mayor que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo mayor que" respecto al campo que le indicamos.
 ## **db.NombreColección.find({campo:{$lt:{valor}})**:
-se usa para buscar "algo menor que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo menor que" respecto al campo que le indicamos.
 ## **db.NombreColección.find({campo:{$eq:{valor}})**:
-se usa para buscar "algo igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo igual que" respecto al campo que le indicamos.
 ## **db.NombreColección.find({campo:{$ne:{valor}})**:
-se usa para buscar "algo no igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo no igual que" respecto al campo que le indicamos. 
 ## **db.NombreColección.find({campo:{$gte:{valor}})**:
-se usa para buscar "algo mayor o igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo mayor o igual que" respecto al campo que le indicamos. 
 ## **db.NombreColección.find({campo:{$lte:{valor}})**:
-se usa para buscar "algo menor o igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
+se usa para buscar "algo menor o igual que" respecto al campo que le indicamos. 
 ## **para memorizarlo mejor**: 
 gt (Greater Than, mayor que), lt (Less Than, Menor que), eq (equal, igual que), ne (not equal, distinto que), gte (Greater Than Equal, mayor o igual que). lte (Less Than Equal, menor o igual que)
 
@@ -57,6 +58,10 @@ se usa para indicar que busque un valor por la letra final en el campo que se le
 
 # Operadores Lógicos 
 ## db.NombreColección.find({campo:{$in[valor1,valor2,valor3,etc.]}}):
-se usa como operador "o". busca cualquier valor indicado después del operador $in dentro del campo que se le indica. $in proviene de "include"
+se usa como operador "y". busca cualquier valor indicado después del operador $in dentro del campo que se le indica. $in proviene de "include"
 ## db.NombreColección.find({campo:{$nin[valor1,valor2,valor3,etc.]}}):
 hace lo contrario al operador anterior. ignora cualquier valor asignado después del operador $nin. $nin proviene de "not include"
+## db.NombreColección.find({campo1:valor1},{campo2:valor2}):
+también se usa como un operador "y". acá busca documentos que cumplan con los 2 valores indicados. **_NOTA_**: también se pueden aplicar operaciones númericas dentro de los campos, quedando algo así: **db.NombreColección.find({campo1:$gt{valor1}},{campo2:$gt{valor2}})**
+## db.NombreColección.find($or:[{campo1:valor1},{campo2:valor2},{campoN:valorN}]):
+Operador Lógico 'o'. returnará resultados cuando un documento cumpla con un valor o con otro. 
