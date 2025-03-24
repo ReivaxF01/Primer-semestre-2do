@@ -44,5 +44,5 @@ se usa para buscar "algo mayor o igual que" respecto al campo que le indicamos. 
 ## **db.NombreColección.find({campo:{$lte:{valor}})**:
 se usa para buscar "algo menor o igual que" respecto al campo que le indicamos. _**NOTA**: se usa solo para variables numericas._
 
-##**para memorizarlo mejor**: 
+## **para memorizarlo mejor**: 
 gt (Greater Than, mayor que), lt (Less Than, Menor que), eq (equal, igual que), ne (not equal, distinto que), gte (Greater Than Equal, mayor o igual que). lte (Less Than Equal, menor o igual que)
