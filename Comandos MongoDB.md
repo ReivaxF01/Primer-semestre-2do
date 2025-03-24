@@ -65,3 +65,6 @@ hace lo contrario al operador anterior. ignora cualquier valor asignado después
 también se usa como un operador "y". acá busca documentos que cumplan con los 2 valores indicados. **_NOTA_**: también se pueden aplicar operaciones númericas dentro de los campos, quedando algo así: **db.NombreColección.find({campo1:$gt{valor1}},{campo2:$gt{valor2}})**
 ## db.NombreColección.find($or:[{campo1:valor1},{campo2:valor2},{campoN:valorN}]):
 Operador Lógico 'o'. returnará resultados cuando un documento cumpla con un valor o con otro. 
+## db.NombreColección.find($and:[{campo1:valor1},{campo2:valor2},{campoN:valorN}]):
+Operador Lógico 'y'. returnará resultados cuando un documento cumpla con un valor y con los otros. 
+
