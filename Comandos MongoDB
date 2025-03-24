@@ -1,0 +1,9 @@
+Comandos MongoDB:
+use <nombre de la base de datos>: sirve para cambiar entre bases de datos. NOTA: la base de datos no se creará hasta que tenga al menos una colección
+show dbs o show databases: se usa para mostrar las bases de datos existentes
+db.createCollection('nombre de la colección'): se usa para crear colecciones dentro de una base de datos
+db.NombreBaseDeDatos.renameCollection('Nombre de la colección'): se usa para editar el nombre de una colección
+db.NombreColección.drop(): se usa para eliminar una colección
+db.NombreColección.insertOne({acá se añaden los datos que se quieran agregar a la colección siguiendo el formato JSON}): se usa opara insertar datos dentro de una colección
+db.NombreColección.find(): se usa para ver los archivos (o articulos) dentro de la colección
+db.NombreColección.insertMany([{dato1},{dato2},{datoN}]): se usa para añadir varios datos dentro de una colección deuna sola vez
