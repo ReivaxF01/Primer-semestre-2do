@@ -63,8 +63,17 @@ se usa como operador "y". busca cualquier valor indicado después del operador $
 hace lo contrario al operador anterior. ignora cualquier valor asignado después del operador $nin. $nin proviene de "not include"
 ## db.NombreColección.find({campo1:valor1},{campo2:valor2}):
 también se usa como un operador "y". acá busca documentos que cumplan con los 2 valores indicados. **_NOTA_**: también se pueden aplicar operaciones númericas dentro de los campos, quedando algo así: **db.NombreColección.find({campo1:$gt{valor1}},{campo2:$gt{valor2}})**
+
 ## db.NombreColección.find($or:[{campo1:valor1},{campo2:valor2},{campoN:valorN}]):
 Operador Lógico 'o'. returnará resultados cuando un documento cumpla con un valor o con otro. 
 ## db.NombreColección.find($and:[{campo1:valor1},{campo2:valor2},{campoN:valorN}]):
 Operador Lógico 'y'. returnará resultados cuando un documento cumpla con un valor y con los otros. 
 
+## $inc:
+se usa para incrementar valores en un documento. si se usa con numeros negativos, se reduce el valor (ejemplo: {$inc:{'valor':10}} esto aumenta el valor en 10, en cambio {$inc:{'valor':-10}} esto reduce el valor en 10)
+## $mul:
+se usa para multiplicar el valor por la cantidad mencionada. (por ejemplo, si usamos {$mul{'valor':2}}, multiplica el valor por 2)
+## $max:
+igualará los valores inferiores al numero que le asignemos al numero asignado. si el numero es superior, lo mantendrá.(ejemplo: si establecemos {$max:{'valor':200}}, cualquier valor inferior en 'valor' se actualizará, es decir si un producto tuviese el valor de 100, se modificará a 200. si otro producto en cambio, está en 300, este se mantendrá con ese valor)
+## $min:
+hace lo contrario al $max. si un valor es mayor al valor que le asignamos, este se reducirá al valor asignado.(ejemplo: si establecemos que {$min:{'valor':100}}, cualquier valor sibre 100 se reducirá a este numero. para el ejemplo anterior, ambos numeros se reducirían a 100 ya que son mayores, pero si un numero es menor, suponiendo que tenemos uno de valor 50, este se mantendrá)
